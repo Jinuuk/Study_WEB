@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    ul,li {margin:0; padding:0; list-style-type: none;}
+  </style>
+</head>
+<body>
+  <div id="container">
+    <fieldset>
+      <legend>취미</legend>
+        <ul class="hobby">
+          <div class="hobby_item">
+            <input type="checkbox" name="" id=""><span>전체</span>
+          </div>
+          <li class="hobby_item">
+            <input type="checkbox" name="" id=""><span>취미1</span>
+          </li>
+          <li class="hobby_item">
+            <input type="checkbox" name="" id=""><span>취미2</span>
+          </li>
+          <li class="hobby_item">
+            <input type="checkbox" name="" id=""><span>취미3</span>
+          </li>
+        </ul>
+    </fieldset>
+  </div>
+  <script>
+    $selectAll = document.querySelector('.hobby div input');
+    // console.log($selectAll);
+
+    const selectAll_h = evt => {
+      // console.log('함수실행');
+      let $allMenu = document.querySelectorAll('.hobby li input');
+      // console.log($allMenu);
+      if($selectAll.checked){
+        $allMenu.forEach($menu => $menu.setAttribute('checked',''));
+      }else {
+        $allMenu.forEach($menu => $menu.removeAttribute('checked',''));
+      }   
+    };
+
+    $selectAll.addEventListener('click',selectAll_h);
+    
+    
+    
+
+    
+  </script>
+  
+</body>
+</html>

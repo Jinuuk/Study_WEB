@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    ul,
+    li {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <fieldset>
+      <legend>취미</legend>
+      <div class="select--all">
+        <input type="checkbox" name="" id="allChk"><span>전체</span>
+      </div>
+      <ul class="hobby">
+        <li class="hobby__item">
+          <input type="checkbox" name="hobby" id="" value="취미1"><span>취미1</span>
+        </li>
+        <li class="hobby__item">
+          <input type="checkbox" name="hobby" id="" value="취미2"><span>취미2</span>
+        </li>
+        <li class="hobby__item">
+          <input type="checkbox" name="hobby" id="" value="취미3"><span>취미3</span>
+        </li>
+      </ul>
+      <div class="btngrp"><button class="btn btn__del">삭제</button></div>
+    </fieldset>
+    <div id="msg"></div>
+
+  </div>
+  <script>
+    //이벤트 핸들러
+    //1)전체 선택
+    const allChkClick_h = e => {
+      const $hobbies = document.querySelectorAll('.hobby__item input[type=checkbox]');
+      $hobbies.forEach($hobby => $hobby.checked = e.target.checked ? true : false);
+    }
+    //2)삭제 버튼
+    //case1)
+    // const btnDel_h = e => {
+    //   console.log('삭제버튼 클릭');
+    //   const $hobbies = document.querySelectorAll('.hobby__item input[type=checkbox]');
+    //   if (confirm('삭제하시겠습니까?')) {
+    //     let str = ``;
+    //     let countOfCheckedInput = 0;
+    //     $hobbies.forEach($hobby => {
+    //       if ($hobby.checked) {
+    //         console.log($hobby.value);
+    //         str += `${$hobby.value},`;
+    //         ++countOfUncheckedInput;
+    //       }
+    //     });
+    //     if (countOfCheckedInput !== 0) {
+    //       str = str.substring(0, str.length - 1);
+    //       str = `${str}를 삭제하였습니다.`;
+    //     } else {
+    //       str = '삭제 대상이 없습니다.';
+    //     }
+    //     document.getElementById('msg').textContent = str;
+    //   }
+    // }
+    //case2)
+    const btnDel_h = e => {
+      const $hobbies = document.querySelectorAll('.hobby__item input[type=checkbox]');
+      const $filteredArr = [...$hobbies].filter($hobby=>$hobby.checked);
+      //체크된 요소가 없으면
+      if(!$filteredArr.length) {
+        window.alert('삭제할 대상을 선택해주세요.')
+        document.getElementById('msg').textContent = '';
+        return;
+      }
+      let str = ``;
+      $filteredArr.forEach($hobby => str += `${$hobby.value},`);
+      str = str.substring(0, str.length - 1);
+      str = `${str}를 삭제하였습니다.`;
+      document.getElementById('msg').textContent = str;
+    }
+
+    //이벤트 등록
+    //1)전체 선택 버튼
+    document.getElementById('allChk').addEventListener('click', allChkClick_h);
+
+    //2) 삭제 버튼
+    document.querySelector('.btn.btn__del').addEventListener('click', btnDel_h);
+
+  </script>
+
+</body>
+
+</html>

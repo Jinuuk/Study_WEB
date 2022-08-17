@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div id="wrapper">
+    <nav class ="top-menu">
+      <div class="top-menu-box">
+        <a href="">로그인</a>
+        <span>|</span>
+        <a href="">회원가입</a>
+      </div>
+    </nav>
+    <header class = "banner">
+      <img src="https://cdn.pixabay.com/photo/2018/09/27/09/22/artificial-intelligence-3706562_960_720.jpg" alt="">
+    </header>
+    <nav class ="bottom-menu">
+      <ul>
+        <li><a href="">웹표준</a></li>
+        <li><a href="">자바</a></li>
+        <li><a href="">안드로이드</a></li>
+        <li><a href="">데이터베이스</a></li>
+        <li><a href="">스프링</a></li>
+      </ul>
+    </nav>
+    <main>
+      <aside class = "main-left"></aside>
+      <section class = "main-right">
+        <h3 class="join-title">회 원 가 입</h3>
+          <form action="" class="join-form" >
+            <label for="아이디" class ="line">아이디</label><input id="아이디" type="text">
+            <label for="비번" class ="line">비밀번호</label><input id="비번" type="password">
+            <label for="비번확인" class ="line">비밀번호 확인</label><input id="비번확인" type="password">
+            <label for="전화번호" class ="line">전화번호</label><input id="전화번호" type="tel">
+            <label for="별칭" class ="line">별칭</label><input id="별칭" type="text">
+            <label for="지역" class ="line">지역</label>
+              <select name="" id="지역">
+                <option value="">==선택==</option>
+                <option value="">서울</option>
+                <option value="">부산</option>
+                <option value="">대구</option>
+                <option value="">대전</option>
+                <option value="">울산</option>
+              </select>
+            <div class = "radio">
+              <h4 class ="line">성별</h4>
+              <input type="radio" name="gender" id ="남"><label for="남" class ="chk-text">남자</label>
+              <input type="radio" name="gender" id ="여"><label for="여" class ="chk-text">여자</label>
+            </div>
+            <div class="checkbox">
+              <h4 class ="line">취미</h4>
+              <input type="checkbox" name="hobby" id="독서"><label for="독서" class ="chk-text">독서</label>
+              <input type="checkbox" name="hobby" id="음악감상"><label for="음악감상" class ="chk-text">음악감상</label>
+              <input type="checkbox" name="hobby" id="운동"><label for="운동" class ="chk-text">운동</label>
+              <input type="checkbox" name="hobby" id="게임"><label for="게임" class ="chk-text">게임</label>
+            </div>
+            <label for="birth" class ="line">생년월일</label><input type="date" name="" id="birth">
+            <button>회원가입</button>
+          </form>
+      </section>
+    </main>
+    <footer>
+      Copyright by Gildong Hong. All Rights Reserved.
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+드롭다운 메뉴 바
+	: https://blog.naver.com/PostView.naver?blogId=bgpoilkj&logNo=221150512824
+	
+flex 열 고정
+	: https://juahnpop.tistory.com/298
+	
+input submit VS button
+	: https://webdir.tistory.com/421
+
+ a태그 크기 변경
+	: https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=s2wldmss2&logNo=220730491348
+
+transform 속성
+	: https://www.codingfactory.net/12593
+	
+for in VS for of
+	: https://velog.io/@hoon_dev/JavaScript-for-in-for-of-%EB%B0%98%EB%B3%B5%EB%AC%B8-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0
+
+Element.closest() 설명
+	: https://velog.io/@leyuri/javascript-Element.closest-%ED%95%A8%EC%88%98%EB%9E%80
+	
+JS 프로토타입 
+	:	https://www.nextree.co.kr/p7323/
+	:	https://developer.mozilla.org/ko/docs/Learn/JavaScript/Objects/Object_prototypes
+	
+JS reduce
+	:	https://tocomo.tistory.com/26
+	
+글자 맨 마지막에 포커스 주는 방법
+	: https://bobbyhadz.com/blog/javascript-move-cursor-end-of-text-input
+
+form 태그
+	: https://ofcourse.kr/html-course/form-%ED%83%9C%EA%B7%B8
+	
+git 사용법 간단 정리
+	: https://velog.io/@augus-xury/github-%EC%82%AC%EC%9A%A9%EB%B2%95-%EA%B0%84%EB%8B%A8-%EC%A0%95%EB%A6%AC
+	
+자바스크립트 생성자 함수 설명
+	:	https://ko.javascript.info/constructor-new
+	
+스프링 의존성 주입 개념
+	: https://devlog-wjdrbs96.tistory.com/165
+	

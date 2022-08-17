@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="create_element.js"></script>
+  <style>
+    /* * { outline: 1px solid green; } */
+
+    ul { margin: 0; padding: 0; }
+
+    ul, li { list-style: none; }
+
+    #container .wrap { display: flex; align-items: stretch; }
+
+    #container .wrap .title { align-self: center; width: 80px; }
+
+    #container .wrap .comment { flex: 1; }
+
+    #container .wrap .btn { width: 60px; margin-left: 5px; }
+
+    #container .comment__list .comment__item-wrap { display: flex; }
+
+    #container .comment__list .comment__item-wrap .comment__item { flex: 1; }
+
+    #container .comment__list .comment__change-wrap { display: flex; }
+
+    #container .comment__list .comment__change-wrap .change-comment { flex: 1; height: 24px; }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+
+    <div class="wrap">
+      <label for="" class="title">댓글작성</label>
+      <textarea class="comment" name="" id="" cols="30" rows="3" placeholder="댓글입력(300자 미만)"></textarea>
+      <button class="btn btn__write">등록</button>
+    </div>
+    <div class="comment__list">
+      <ul class="comments">
+        <!-- <div class="comment__box">
+
+          <div class="comment__item-wrap">
+            <li class="comment__item">댓글</li>
+            <button class="btn btn__del">삭제</button>
+            <button class="btn btn__modify">수정</button>
+          </div>
+
+          <div class="comment__change-wrap">
+            <textarea class="change-comment" name="" id="" cols="30" rows="10"></textarea>
+            <button class="btn btn__complete-modify">완료</button>
+            <button class="btn btn__cancel-modify">취소</button>
+          </div>
+
+        </div> -->
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    //등록 함수
+    const write_h = e => {
+      const $comment = document.querySelector('.comment').value.trim();
+      if($comment.length){
+        const $div = 
+        makeElements('div', {class : 'comment__box'},
+        makeElements('div', {class : 'comment__item-wrap'},
+        makeElements('li', {class : 'comment__item'}, $comment),
+        makeElements('button', {class : 'btn btn__del'}, '삭제'),
+        makeElements('button', {class : 'btn btn__modify'}, '수정')))
+        
+        document.querySelector('.comments').appendChild($div);
+        document.querySelector('.comment').value = '';
+        }else alert('댓글을 입력해주세요.');
+        document.querySelector('.comment').focus();
+    };
+
+    //삭제 함수
+    const delete_h = e => {
+      const $delBtns = document.querySelectorAll('.btn.btn__del'); 
+      for (let i=0; i < $delBtns.length; i++){
+        if($delBtns[i] == e.target){
+          const $child = e.target.closest('.comment__item-wrap');
+          document.querySelectorAll('.comment__box')[i].remove($child);
+        };
+      };
+    };
+   
+    //수정 함수 
+    const modify_h = e => {
+      if(document.querySelectorAll('.comment__change-wrap').length == 1) return alert('수정을 완료해주세요.'); //동시 수정 방지
+
+      const $modifyBtns = document.querySelectorAll('.btn.btn__modify'); 
+      for (let i=0; i < $modifyBtns.length; i++){
+        if($modifyBtns[i] == e.target){
+          const $comment = document.querySelectorAll('.comment__item')[i].textContent;
+          const $child = e.target.closest('.comment__item-wrap');
+          document.querySelectorAll('.comment__item-wrap')[i].remove($child); //왜 coment__box가 아니라 comment__item-wrap?
+
+          const $div = 
+          makeElements('div', {class : 'comment__change-wrap'},
+          makeElements('textarea', {class : 'change-comment', autofocus : true},$comment), //마지막 글자에 포커스 주는 방법은?
+          makeElements('button', {class : 'btn btn__complete-modify'}, '수정완료'),
+          makeElements('button', {class : 'btn btn__cancel-modify'}, '수정취소'));
+          document.querySelectorAll('.comment__box')[i].appendChild($div); //왜?
+
+          //수정완료 함수
+          const completeModify_h = e => {
+            const $completeModifyBtn = document.querySelector('.btn.btn__complete-modify');
+            if($completeModifyBtn == e.target){
+              const $newComment = document.querySelector('.change-comment').value.trim();
+
+              const $child2 = e.target.closest('.comment__change-wrap');
+              document.querySelector('.comment__change-wrap').remove($child2);
+
+              const $div = 
+              makeElements('div', {class : 'comment__item-wrap'},
+              makeElements('li', {class : 'comment__item'},$newComment),
+              makeElements('button', {class : 'btn btn__del'}, '삭제'),
+              makeElements('button', {class : 'btn btn__modify'}, '수정'));
+      
+              document.querySelectorAll('.comment__box')[i].appendChild($div);
+            } 
+          }
+
+          //수정취소 함수
+          const cancelModify_h = e => {
+            const $cancelModifyBtn = document.querySelector('.btn.btn__cancel-modify');
+            if($cancelModifyBtn == e.target){
+
+              const $child2 = e.target.closest('.comment__change-wrap');
+              document.querySelector('.comment__change-wrap').remove($child2);
+
+              const $div = 
+              makeElements('div', {class : 'comment__item-wrap'},
+              makeElements('li', {class : 'comment__item'},$comment),
+              makeElements('button', {class : 'btn btn__del'}, '삭제'),
+              makeElements('button', {class : 'btn btn__modify'}, '수정'));
+      
+              document.querySelectorAll('.comment__box')[i].appendChild($div);
+          }
+        };
+          //완료 버튼 클릭
+          const $complete = document.querySelector('.comment__change-wrap');
+          $complete.addEventListener('click',completeModify_h);
+
+          //취소 버튼 클릭
+          const $cancel = document.querySelector('.comment__change-wrap');
+          $complete.addEventListener('click',cancelModify_h);
+      };
+    };
+  };
+    //등록 버튼 클릭
+    const $write = document.querySelector('.btn.btn__write');
+    $write.addEventListener('click',write_h);
+  
+    //삭제 버튼 클릭
+    const $delete = document.querySelector('.comments');
+    $delete.addEventListener('click', delete_h);
+
+    //수정 버튼 클릭
+    const $modify = document.querySelector('.comments');
+    $modify.addEventListener('click', modify_h);
+  </script>
+</body>
+</html>

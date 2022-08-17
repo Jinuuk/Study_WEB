@@ -1,0 +1,230 @@
+@charset "utf-8";
+/* *{outline : 1px solid green} */
+body, ul, li ,fieldset, legend, p, h2 {margin:0; padding:0;}
+
+a{
+  text-decoration: none;
+  color:inherit;
+}
+
+address {
+  font-style: normal;
+}
+
+ul,li {list-style-type: none;}
+
+fieldset {border:none;}
+
+legend {
+  /* visibility: hidden; 사라지지만 공간은 남아있음 */
+  display : none;
+}
+
+input[type=radio], input[type=checkbox]{
+  margin:3px 2px;
+}
+button {
+  border:none;
+}
+
+:root {
+  /* color */
+  --font-color-top : #fff;
+  --font-color-gnb : #fff;
+  --font-color-footer : #fff;
+  
+  --bg-color-top:#111;
+  --bg-color-gnb:#222;
+  --bg-color-footer:#ccc;
+  --bg-color-aside:lightSkyBlue;
+  --bg-color-section:lightCyan;
+  --bg-color-signup-wrap:#fff;
+
+  --btn-bg-color : green;
+  --btn-color : #fff;
+
+  /* spacing */
+
+  /* font-size */
+  font-size : 16px;
+  --font-size-small:0.8rem;
+  --font-size-middle:1.2rem;
+  --font-size-big:1.5rem;
+}
+
+/* 공통 */
+.content {
+  width: 600px;
+  margin:0 auto; /* 좌우 마진을 자동으로 나눠가져서 컨텐츠를 중앙으로 이동시킴*/
+}
+
+/* uppermost */
+#uppermost {
+  display:flex;
+  align-items: center;
+  height: 50px;
+  background-color: var(--bg-color-top);
+}
+
+#uppermost .content {
+  display:flex;
+  justify-content: flex-end;
+  font-size: var( --font-size-small);
+  font-weight: bold;
+  color:var(--font-color-footer);
+}
+
+#uppermost .content .interval{
+  padding:0 5px;
+}
+
+/* header */
+#header {
+  height: 150px;
+}
+
+#header .content{
+  height: 100%;
+  background-image: url('https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_960_720.jpg');
+  background-size: 600px 150px;
+}
+
+/* gnb */
+#gnb {
+  height: 50px;
+  font-size: var( --font-size-small);
+  font-weight: bold;
+  color:var(--font-color-gnb);
+}
+
+#gnb .content {
+  display: flex;
+  align-items: center;
+  height: 100%;;
+  background-color: var(--bg-color-gnb);
+  align-items: center;
+}
+
+#gnb .gnb-menu {
+  display : flex;
+  flex:1;
+}
+
+#gnb .gnb-menu .gnb-menu__item {
+  /* display:flex;
+  justify-content: center; */
+  flex:1; /* flex-grow:1; flex-shrink:1; flex-basis:0; */
+  position: relative;
+}
+
+
+#gnb .gnb-menu .gnb-menu__item:hover::before{
+  content:attr(title);
+  display:inline-block;
+  position:absolute;
+  top:-15px; right:-10px;
+  background-color: pink;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+#gnb .gnb-menu .gnb-menu__item:hover::after{
+  content:' ';
+  display:inline-block;
+  position:absolute;
+  bottom:-10px;
+  left:55px;
+  width: 0;
+  border-style:solid;
+  border-color:transparent transparent white transparent;
+}
+
+#gnb .gnb-menu .gnb-menu__item a:hover{
+  text-decoration: underline;
+}
+
+
+#gnb .gnb-menu .gnb-menu__item .title {
+  display:block;
+  text-align: center;
+}
+
+/* main */
+#main .content {
+  display : flex;
+}
+
+#main .content .aside{
+  background-color: var(--bg-color-aside);
+  flex:1;
+}
+
+#main .content .section{
+  background-color: var(--bg-color-section);
+  flex:4;
+  display : flex;
+  justify-content: center;
+}
+
+#main .content .section .signup-wrap{
+  background-color: var(--bg-color-signup-wrap);
+  width: 250px;
+  margin : 30px 0;
+  padding:15px;
+}
+
+#main .content .section .signup-wrap .title{
+  text-align: center;
+  letter-spacing: 0.5em;
+}
+
+#main .content .section .signup-wrap .signup li{
+  margin:0.5px 0;
+}
+
+#main .content .section .signup-wrap .btn.btn__join{
+  margin-top:1.2em;
+}
+
+/* footer */
+#footer {
+  display:flex;
+  align-items: center;
+  height: 70px;
+  background-color: var(--bg-color-footer);
+}
+
+#footer .content {
+  display : flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#footer .content address {
+  font-size: var( --font-size-small);
+  color : var(--font-color-footer);
+}
+
+/* button */
+.btn__join {
+  /* width: 100%; */
+  color:var(--btn-color);
+  background-color: var(--btn-bg-color);
+  color:white;
+  padding : 5px;
+}
+
+.width--100 {
+  width: 100%;
+}
+
+.box-sizing--bdr {
+  box-sizing: border-box; /* 박스 사이즈 범위의 기준 설정 */
+}
+
+.font-weight-400 {
+  font-weight: 400px; /*bold*/
+}
+

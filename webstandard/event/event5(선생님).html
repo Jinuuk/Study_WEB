@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    ul, li { margin: 0; padding: 0; list-style-type: none; }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <fieldset>
+      <legend>취미</legend>
+      <div class="select--all">
+        <input type="checkbox" name="" id="allChk"><span>전체</span>
+      </div>
+      <ul class="hobby">
+        <li class="hobby__item">
+          <input type="checkbox" name="" id=""><span>취미1</span>
+        </li>
+        <li class="hobby__item">
+          <input type="checkbox" name="" id=""><span>취미2</span>
+        </li>
+        <li class="hobby__item">
+          <input type="checkbox" name="" id=""><span>취미3</span>
+        </li>
+      </ul>
+    </fieldset>
+
+  </div>
+  <script>
+    const allChkClick_h = e => {
+      // console.log(e.target);
+
+      const $hobbies = document.querySelectorAll('.hobby__item input[type=checkbox]');
+      // console.log($hobbies);
+      //case1) 일반 for문
+      // for(let $hobby of $hobbies) {
+      //   // if(e.target.checked){
+      //   //   $hobby.checked = true;
+      //   // }else{
+      //   //   $hobby.checked = false;
+      //   // }
+
+      //   //삼항 연산자
+      //   $hobby.checked = e.target.checked ? true : false;
+      // }
+      //case2)
+      // $hobbies.forEach(function($hobby){
+      //   $hobby.checked = e.target.checked ? true : false;
+      // });
+      $hobbies.forEach($hobby => $hobby.checked = e.target.checked ? true : false );
+    }
+
+    document.getElementById('allChk').addEventListener('click', allChkClick_h);
+
+  </script>
+
+</body>
+
+</html>

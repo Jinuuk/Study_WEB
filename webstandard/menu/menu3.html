@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* * {outline:1px solid green} */
+    ul {margin:0;padding:0}
+    ul, li {list-style: none;}
+    a {text-decoration: none; color:#fff;}
+    body {margin:0px;}
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding:5px 10px;
+      background-color: rgb(105, 105, 166);
+      position: relative;
+    }
+
+    .navbar__logo, .navbar__menu, .navbar__sns {
+      display : flex;
+    }
+
+    /* logo */
+      .navbar .navbar__logo li:nth-child(1) {
+        display : flex;
+        justify-content: center;
+        align-items: center;
+        margin-right:7px;
+      }
+
+      .navbar .navbar__logo li:nth-child(1) i {
+        font-size : 1.2em;
+        color:#F9F8FF;
+      }
+    
+
+      .navbar .navbar__logo li:nth-child(2) {
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+    
+    /* gnb */
+      .navbar .navbar__menu li {
+        padding:8px 12px;
+        border-radius: 5px;
+      }
+
+      .navbar .navbar__menu li:hover {
+        background-color: #9E9CDD;
+        transition: background-color 0.5s ease;
+      }
+
+      .navbar .navbar__menu li a:hover {
+        text-decoration: underline;
+      }
+
+    /* sns */
+      .navbar .navbar__sns li {
+        margin-left : 10px;
+        margin-top : 5px;
+      }
+
+      /* hamburger btn */
+      #hamburger {
+        display: none;
+        position : absolute;
+        top:3px;
+        right: 12px;
+      }
+
+      @media screen and (max-width:767px) {
+        .navbar,.navbar .navbar__menu {
+          flex-direction: column;
+        }
+
+        #hamburger {
+          display: block;
+        }
+
+        .navbar .navbar__logo {
+        align-self: flex-start;
+        }
+
+        /* .navbar .navbar__menu, .navbar .navbar__sns {
+          display:none;
+        } */
+
+        .navbar .navbar__menu {
+          width: 100%;
+          text-align: center;
+          border-top:0.5px solid #F9F8FF;
+          border-bottom:0.5px solid #F9F8FF;
+        }
+
+        .navbar .navbar__menu.active, .navbar .navbar__sns.active {
+          display:none;
+        }
+      }
+
+
+
+
+
+  </style>
+  <script src="https://kit.fontawesome.com/038578f405.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="navbar">
+    <ul class="navbar__logo">
+      <li><a href=""><i class="fa-solid fa-computer"></i></a></li>
+      <li><a href="">울산KH정보교육원</a></li>
+    </ul>
+    <ul class="navbar__menu">
+      <li><a href="#">모집과정</a></li>
+      <li><a href="#">입학신청</a></li>
+      <li><a href="#">교육과정</a></li>
+      <li><a href="#">취업정보</a></li>
+      <li><a href="#">커뮤니티</a></li>
+    </ul>
+    <ul class="navbar__sns">
+      <li><a href="#"><i class="fa-brands fa-facebook-square"></i></a></li>
+      <li><a href="#"><i class="fa-brands fa-instagram-square"></i></a></li>
+      <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+    </ul>
+    <a href="#" id="hamburger"><i class="fa-solid fa-bars"></i></a>
+  </div>
+
+  <script>
+    const $hamburger = document.getElementById('hamburger');
+    $hamburger.addEventListener('click', handleHamburger);
+
+    function handleHamburger(){
+      console.log('햄버거 버튼 클릭!');
+      const $logo = document.querySelector('.navbar .navbar__logo');
+      const $menu = document.querySelector('.navbar .navbar__menu');
+      const $sns = document.querySelector('.navbar .navbar__sns');
+
+      $logo.classList.toggle('active');
+      $menu.classList.toggle('active');
+      $sns.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

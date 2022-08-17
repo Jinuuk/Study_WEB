@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      outline:1px solid red;
+    }
+    body {
+      margin:0px;
+    }
+    #wrapper > .container {
+      display : flex;
+      justify-content: center;
+    }
+
+    #wrapper > .container > .content {
+      width: 70vw;
+    }
+
+    #wrapper > #uppermost > .content {
+      width:100vw;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="wrapper" >
+    <div id="uppermost" class="container">
+      <div class="content">uppermost</div>
+    </div>
+    <div id="header" class="container">
+      <div class="content">header</div>
+    </div>
+    <div id="gnb" class="container">
+      <div class="content">gnb</div>
+    </div>
+    <div id="main" class="container">
+      <div class="content">main</div>
+    </div>
+    <div id="footerMenu" class="container">
+      <div class="content">footerMenu</div>
+    </div>
+    <div id="footer" class="container">
+      <div class="content">footer</div>
+    </div>
+  </div>
+</body>
+</html>

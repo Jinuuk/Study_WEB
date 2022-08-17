@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    ul, li { margin: 0; padding: 0; list-style-type: none; }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <fieldset>
+      <legend>취미</legend>
+      <div class="select--all">
+        <input type="checkbox" name="" id="allChk"><span>전체</span>
+      </div>
+      <ul class="hobby">
+        <li class="hobby__item">
+          <input type="checkbox" name="hobby" id="" value ="취미1"><span>취미1</span>
+        </li>
+        <li class="hobby__item">
+          <input type="checkbox" name="hobby" id="" value ="취미2"><span>취미2</span>
+        </li>
+        <li class="hobby__item">
+          <input type="checkbox" name="hobby" id="" value ="취미3"><span>취미3</span>
+        </li>
+      </ul>
+      <div class="btngrp"><button class="btn btn__del">삭제</button></div>
+    </fieldset>
+    <div id="msg"></div>
+
+  </div>
+  <script>
+    //이벤트 핸들러
+    //1)전체 선택
+    const allChkClick_h = e => {
+      const $hobbies = document.querySelectorAll('.hobby__item input[type=checkbox]');
+      $hobbies.forEach($hobby => $hobby.checked = e.target.checked ? true : false );
+    }
+    //2)삭제 버튼
+    const btnDel_h = e => {
+      // console.log('삭제버튼 클릭');
+      const $hobbies = document.querySelectorAll('.hobby__item input[type = checkbox]');
+      // console.log($hobbies);
+
+      const answer = confirm('삭제하시겠습니까?');
+      // console.log(answer);
+      let str = ``;
+      if(answer){
+        $hobbies.forEach($hobby => {
+          if($hobby.checked){
+            let $child = $hobby.closest('.hobby__item');
+            document.querySelector('.hobby').removeChild($child);
+            str += `${$child.textContent},`;
+          }
+        })
+        str = str.substr(0,str.length-1);
+        document.getElementById('msg').textContent = `${str}를 삭제했습니다.`;
+      }
+    }
+
+    //이벤트 등록
+    //1)전체 선택 버튼
+    document.getElementById('allChk').addEventListener('click', allChkClick_h);
+  
+    //2) 삭제 버튼
+    document.querySelector('.btn.btn__del').addEventListener('click',btnDel_h);
+
+  </script>
+
+</body>
+
+</html>

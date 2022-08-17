@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <fieldset>
+    <legend>아이스크림</legend>
+    <input type="radio" name="icecream" id="v1"><label for="v1">비비빅</label>
+    <input type="radio" name="icecream" id="v2"><label for="v2">누가바</label>
+    <input type="radio" name="icecream" id="v3"><label for="v3">메로나</label>
+    <input type="radio" name="icecream" id="v4"><label for="v4">수박바</label>
+    <input type="radio" name="icecream" id="v5"><label for="v5">돼지바</label>
+  </fieldset>
+  <div id="msg"></div>
+</body>
+<script>
+  //배열을 변수에 담기
+  const $icecreams = document.querySelectorAll('input[type=radio]');
+  console.log($icecreams);
+
+  //selectIcecream_h 함수 생성
+  // function selectIcecream_h (evt) {
+  //   const selectIcecream = evt.target.nextElementSibling.textContent;
+  //   const msg = `${selectIcecream} 선택 완료`
+  //   document.getElementById('msg').textContent = msg;
+  // }
+
+  // const selectIcecream_h = function (evt) {
+  //   const selectIcecream = evt.target.nextElementSibling.textContent;
+  //   const msg = `${selectIcecream} 선택 완료`
+  //   document.getElementById('msg').textContent = msg;
+  // }
+
+  const selectIcecream_h = evt => {
+    const selectIcecream = evt.target.nextElementSibling.textContent;
+    const msg = `${selectIcecream} 선택 완료`
+    document.getElementById('msg').textContent = msg;
+  }
+
+  //일반 for문 사용
+  // for(let i = 0; i < $icecreams.length; i++){
+  //   $icecreams[i].addEventListener('click',selectIcecream_h);
+  // }
+
+  //for-of문 사용
+  // for (let $icecream of $icecreams) {
+  //   $icecream.addEventListener('click', selectIcecream_h);
+  // }
+
+  //forEach 사용
+  $icecreams.forEach(ele => ele.addEventListener('click', selectIcecream_h));
+
+</script>
+
+</html>

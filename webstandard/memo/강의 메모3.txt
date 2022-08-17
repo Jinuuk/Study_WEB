@@ -1,0 +1,4 @@
+flexbox
+	1.container & item
+
+	2. main axis & cross axis

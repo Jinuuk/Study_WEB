@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    
+  </style>
+</head>
+<body>
+  <div id="container">
+    <ul class="menu">
+      <li class="menu__item">menu1</li>
+      <li class="menu__item">menu2</li>
+      <li class="menu__item">menu3</li>
+    </ul>
+    <div id="msg"></div>
+  </div>
+
+  <script>
+    const $menu1 = document.getElementsByClassName('menu__item')[0];
+    const $menu2 = document.getElementsByClassName('menu__item')[1];
+    const $menu3 = document.getElementsByClassName('menu__item')[2];
+    
+    const click_h = evt => {
+      document.getElementById('msg').textContent = `${evt.target.textContent}을 선택했습니다.`;
+    };
+
+    $menu1.addEventListener('click',click_h);
+    $menu2.addEventListener('click',click_h);
+    $menu3.addEventListener('click',click_h);
+
+
+  </script>
+</body>
+</html>

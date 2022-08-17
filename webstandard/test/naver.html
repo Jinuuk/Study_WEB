@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {outline:1px solid green;}
+    ul,li{margin:0; padding:0; list-style: none;}
+    #container {
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    #container .product {
+      display:flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #container .product .product__item {
+      flex-basis: 200px;
+      flex-shrink: 0;
+      position : relative;
+    }
+
+    #container .product .product__item img {
+      width: 100%;
+      height: 300px;
+    }
+
+    #container .product .product__item .profile .profile__contents {
+      position : absolute; /*부모 요소 중에 static이 아닌 요소를 기준으로 한다.*/
+      bottom:0;
+      left:0;
+    }
+
+    #container .product .product__item .profile .profile__contents p {
+      max-height: 0;
+      opacity: 0;
+      transition: all 1s;
+    }
+
+    #container .product .product__item:hover .profile .profile__contents p {
+      max-height: 100px;
+      opacity: 0.8;
+      overflow: hidden;
+    }
+ 
+  </style>
+</head>
+<body>
+  <div id="container">
+    <ul class="product">
+      <li class="product__item">
+        <div class="profile">
+          <img src="https://cdn.pixabay.com/photo/2022/07/25/15/18/cat-7344042_640.jpg" alt="">
+          <div class="profile__contents">
+            <h2>Lorem, ipsum.</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio dignissimos cupiditate nesciunt doloribus, enim dicta nobis facilis impedit quis autem accusamus veritatis, saepe eos, sapiente aspernatur ducimus earum alias totam?
+           </p>
+          </div>
+        </div>
+      </li>
+      <li class="product__item">
+        <div class="profile">
+          <img src="https://cdn.pixabay.com/photo/2016/12/13/05/15/puppy-1903313_640.jpg" alt="">
+          <div class="profile__contents">
+            <h2>Lorem, ipsum.</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi ab nesciunt nobis? Sint rem ea odio vitae perferendis autem dolor molestias accusantium perspiciatis. Ad porro molestias sunt voluptatum maiores nihil.
+           </p>
+          </div>
+        </div>
+      </li>
+      <li class="product__item">
+        <div class="profile">
+          <img src="https://cdn.pixabay.com/photo/2021/06/01/07/03/sparrow-6300790_640.jpg" alt="">
+          <div class="profile__contents">
+            <h2>Lorem, ipsum.</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit suscipit laudantium, fugiat ad saepe, vero quis sapiente ex, vel amet ipsam. Ratione, ipsam sed. Quibusdam, assumenda quae. Earum, quod consequatur.
+            </p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>

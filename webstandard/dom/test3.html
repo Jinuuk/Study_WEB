@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>콤보박스</title>
+  <style>
+    #check {
+      background-color: yellow;
+    }
+
+    #re-trial {
+      background-color: yellow;
+    }
+
+    .right {
+      background-color: green;
+    }
+
+    .wrong {
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <fieldset>
+    <legend>사칙연산</legend>
+    <select name="cal" id="cal">
+      <option value="?">==선택==</option>
+      <option value="+">덧셈</option>
+      <option value="-">뺄셈</option>
+      <option value="*">곱셈</option>
+      <option value="/">나눗셈</option>
+    </select>
+  </fieldset>
+
+  <input type="text" id="random1" value="">
+  <span id="sign">?</span>
+  <input type="text" id="random2" value="">
+  <span>=</span>
+  <input type="text" id="answer" value="">
+
+  <button id="check">정답 확인</button>
+  <button id="re-trial">다시 풀기</button>
+  <div id="msg"></div>
+</body>
+
+<script>
+  // 난수 발생
+  let $random1 = document.getElementById('random1');
+  let $random2 = document.getElementById('random2');
+  $random1.value = Math.floor(Math.random() * 1000 + 1);
+  $random2.value = Math.floor(Math.random() * 1000 + 1);
+
+  //콤보박스 메뉴 선택 시 연산 기호 변경
+  let $cal = document.getElementById('cal');
+  let $selectSign = '';
+  $cal.addEventListener('click', e => {
+    document.getElementById('sign').innerText = e.target.value;
+    $selectSign = e.target.value;
+  })
+
+  // 답 작성
+  let $answer = document.getElementById('answer');
+
+  //정답 확인
+  let $check = document.getElementById('check');
+  $check.addEventListener('click', function (e) {
+    //공백 확인
+    if ($answer.value == "") {
+      const msg = '정답을 입력해주세요.';
+      const $msg = document.getElementById('msg');
+      $msg.textContent = msg;
+      document.getElementById('answer').focus();
+    } else {
+
+      //덧셈
+      if ($selectSign == '+') {
+        if (parseInt($random1.value) + parseInt($random2.value) == $answer.value) {
+          isRight($answer);
+        }
+        else {
+          isWrong($answer);
+        }
+        //뺄셈
+      } else if ($selectSign == '-') {
+        if (parseInt($random1.value) - parseInt($random2.value) == $answer.value) {
+          isRight($answer);
+        }
+        else {
+          isWrong($answer);
+        }
+        //곱셈
+      } else if ($selectSign == '*') {
+        if (parseInt($random1.value) * parseInt($random2.value) == $answer.value) {
+          isRight($answer);
+        }
+        else {
+          isWrong($answer);
+        }
+        //나눗셈
+      } else {
+        if (Math.round(parseInt($random1.value) / parseInt($random2.value) * 100) / 100 == $answer.value) {
+          isRight($answer);
+        }
+        else {
+          isWrong($answer);
+        }
+      }
+    }
+  })
+
+  //정오답 결과 출력 함수
+  function isRight(ele) {
+    console.log('정답입니다.');
+    ele.classList.remove("wrong");
+    ele.classList.add("right");
+    document.getElementById('answer').style.backgroundColor = "green";
+  }
+  function isWrong(ele) {
+    console.log('오답입니다.');
+    ele.classList.add("wrong");
+    ele.classList.remove("right");
+    document.getElementById('answer').style.backgroundColor = "red";
+  }
+
+  //다시 풀기
+  let $retrial = document.getElementById('re-trial');
+  $retrial.addEventListener('click', function () {
+    const $msg = document.getElementById('msg');
+    $msg.textContent = '';
+    console.log('초기화');
+    $random1.value = Math.floor(Math.random() * 1000 + 1);
+    $random2.value = Math.floor(Math.random() * 1000 + 1);
+    $answer.value = null;
+    $answer.classList.remove('wrong');
+    $answer.classList.remove('right');
+  })
+
+</script>
+
+</html>

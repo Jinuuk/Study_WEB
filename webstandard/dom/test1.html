@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* * {
+      outline : 1px solid green;
+    } */
+    #check {
+      background-color: yellow;
+    }
+
+    #re-trial {
+      background-color: yellow;
+    }
+
+    .right {
+      background-color : green;
+    }
+
+    .wrong {
+      background-color : red;
+    }
+
+  </style>
+</head>
+<body>
+    <input type="text" id = "random1" value =""> +
+    <input type="text" id = "random2" value =""> =
+    <input type="text" id = "answer" value ="">
+    <button id = "check">정답 확인</button>
+    <button id = "re-trial">다시 풀기</button>
+</body>
+
+<script>
+  // 난수 발생
+  let $random1 = document.getElementById('random1');
+  let $random2 = document.getElementById('random2');
+
+  $random1.value = Math.floor(Math.random()*1000+1);
+  $random2.value = Math.floor(Math.random()*1000+1);
+
+  // 답 받기
+  let $answer = document.getElementById('answer');
+  
+
+  // 정답 확인
+  let $check = document.getElementById('check');
+  $check.addEventListener('click',function(){
+    if ($answer.value == "") {
+      console.log('정답을 입력해주세요.');
+      window.alert('정답을 입력해주세요.');
+    } else {
+      if(parseInt($random1.value) + parseInt($random2.value) == parseInt($answer.value)){
+      console.log('정답입니다.');
+      $answer.classList.remove("wrong");
+      $answer.classList.add("right");
+    }
+    else {
+      console.log('오답입니다.');
+      $answer.classList.remove("right");
+      $answer.classList.add("wrong");
+    }
+    }
+  })
+
+  //다시 풀기
+  let $retrial = document.getElementById('re-trial');
+  $retrial.addEventListener('click',function(){
+    console.log('초기화');
+    $random1.value = Math.floor(Math.random()*1000+1);
+    $random2.value = Math.floor(Math.random()*1000+1);
+    $answer.value = null;
+    $answer.classList.remove("wrong");
+    $answer.classList.remove("right");
+  })
+
+</script>
+</html>

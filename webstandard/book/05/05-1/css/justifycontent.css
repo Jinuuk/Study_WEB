@@ -1,0 +1,63 @@
+@charset "utf-8";
+
+* {
+  outline :1px solid red;
+}
+
+main {
+  height: 700px;
+
+}
+
+section {
+  width: 100%;
+  height: 100%;
+  background-color: yellow;
+  border: 10px solid blue;
+  box-sizing: border-box;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content:flex-start;
+  /* align-items: flex-end; */
+  align-content: stretch;
+}
+
+section > article {
+  /* width: 100px; */
+  height: 100px;
+  background-color: aqua;
+}
+
+/*컨텐트를 제외한 아닌 내부 여백의 비율*/
+/* section > article:nth-child(1) {
+  flex-grow: 2; 
+}
+section > article:nth-child(2) {
+  flex-grow: 1;
+}
+section > article:nth-child(3) {
+  flex-grow: 1;
+} */
+
+/**/
+section > article:nth-child(1) {
+  /* flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0; */
+  flex:1;
+}
+section > article:nth-child(2) {
+  /* flex-grow: 2;
+  flex-shrink: 2;
+  flex-basis: 0; */
+  flex:2;
+}
+section > article:nth-child(3) {
+  /* flex-grow: 3;
+  flex-shrink: 3;
+  flex-basis: 0; */
+  flex:3;
+}
+
+

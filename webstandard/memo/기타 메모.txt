@@ -1,0 +1,14 @@
+팀별로 표준으로 정의할 요소 선별하기
+ex) html, css 네이밍 규칙, 버튼, 폰트, 색상, 레이아웃 등
+
+1.template.html (메인화면)
+
+2.reset.css - 기본 엘리먼트 정의
+
+3.layout.css - 레이아웃 스타일 정의
+
+4.font.css - 공통 폰트 정의
+
+5.color.css (변수로 정의)
+
+6.common.css - @import 2,3,4,5

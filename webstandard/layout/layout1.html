@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>메인 페이지</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* * {
+      outline : 1px solid green;
+    } */
+
+    /* a {
+      text-decoration: none;
+    } */
+
+    body {
+      margin: 0;
+      font-family: 'Nanum Pen Script', cursive;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    ul {
+      margin:0;
+      padding:0;
+      list-style: none;
+    }
+
+    header {
+      display: flex;
+      height: 50px;
+      position: sticky;
+      top:0;
+      z-index: 1;
+    }
+
+    header .logo {
+      flex:1;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #eee;
+    }
+
+    header .logo i {
+      color:rgb(12, 116, 151);
+
+    }
+
+    header .menu {
+      flex:3;
+      display : flex;
+      flex-direction: column;
+    }
+
+    header .menu .topmenu {
+      text-align: right;
+    }
+    
+    /* GNB 1단계 메뉴 */
+    header .menu .gnb {
+      height: 30px;
+    }
+
+    header .menu .gnb > ul {
+      display:flex;
+      height: 100%;
+    }
+
+    header .menu .gnb > ul > li {
+      flex:1;
+      padding:2px 3px;
+      background-color: #333;
+      color:#fff;
+      text-align: center;
+      position: relative;
+    }
+
+    header .menu .gnb ul li:hover {
+      color: #999;
+      cursor: pointer;
+    }
+
+     /* GNB 2단계 메뉴 */
+    header .menu .gnb ul > li > ul {
+      display: none;
+      position : absolute;
+      top: 27px;
+      left:0;
+      width:100%;
+    }
+
+    header .menu .gnb > ul > li ul > li{
+      padding: 2px 3px;
+      background-color: #eee;
+    }
+
+    header .menu .gnb > ul > li ul > li:hover {
+      background-color: #666;
+      color:#fff;
+    }
+
+    header .menu .gnb ul > li:hover > ul {
+      display: block;
+    }
+
+    figure {
+      height : 150px;
+      margin:0;
+      position: relative;
+    }
+
+    figure figcaption {
+      position: absolute; /*부모요소 중 position이 static이 아닌 요소를 기준으로 위치 지정*/
+      top : 30px;
+      left : 50px;
+      color:#fff;
+    }
+
+    figure img {
+      height: 150px;
+      width: 100%;
+    }
+
+    main section .content {
+      display : flex;
+      flex-direction: row;
+      flex-wrap:wrap;
+      padding:50px;
+    }
+
+    main section article {
+      flex:1;
+      border :1px solid #ccc;
+      padding:5px
+    }
+
+    footer {
+      display:flex;
+      height:50px;
+      justify-content: center;
+      align-items: center;
+      background-color: #333;
+      color:#fff;
+    }
+  </style>
+  <script src="https://kit.fontawesome.com/038578f405.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <div class="logo"><i class="fa-3x fa-solid fa-water"></i></div>
+    <div class="menu">
+      <div class="topmenu">
+        <span><i title ="로그인" class="fa-solid fa-arrow-right-to-bracket"></i></span>
+        <span>회원가입</span>
+      </div>
+      <div class="gnb">
+        <ul>
+          <li>포털
+            <ul>
+              <li><a href="http://www.naver.com">네이버</a></li>
+              <li><a href="http://www.google.com" target = "blank">구글</a></li>
+              <li>submenu3</li>
+            </ul>
+          </li>
+          <li>menu2
+            <ul>
+              <li>submenu1</li>
+              <li>submenu2</li>
+            </ul>
+          </li>
+          <li>menu3
+            <ul>
+              <li>submenu1</li>
+              <li>submenu2</li>
+              <li>submenu3</li>
+              <li>submenu4</li>
+            </ul>
+          </li>
+          <li>menu4</li>
+          <li>menu5</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <figure>
+    <figcaption>
+      <h2>Lorem, ipsum dolor.</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, corporis.</p>
+    </figcaption>
+    <img src="../img/wave.jpg" alt="파도">
+  </figure>
+  <main>
+    <section>
+      <div class="content">
+        <article>Lorem ipsum dolor sit amet<br>consectetur adipisicing elit. Nobis, incidunt odit. Aut dicta doloribus consequatur, molestiae dolorem et iste porro aliquid quibusdam maiores excepturi ratione recusandae obcaecati. Laboriosam, ea quas.</article>
+        <article>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum a consequatur nihil quas dolore magnam recusandae alias molestiae rem omnis enim illo, vel sed natus aliquid, libero laudantium non necessitatibus!</article>
+        <article>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis sed repellat sapiente eos, et expedita? Rem explicabo voluptatum quibusdam dolorum, eligendi ratione a excepturi esse quis ut placeat, tempore quo?</article>
+        <article>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium saepe repellendus, explicabo distinctio error quia facilis, magni aspernatur nihil ipsa veritatis hic omnis provident ipsum minima inventore. Tempore, itaque exercitationem?</article>
+        <article>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium saepe repellendus, explicabo distinctio error quia facilis, magni aspernatur nihil ipsa veritatis hic omnis provident ipsum minima inventore. Tempore, itaque exercitationem?</article>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>Copyright@울산KH정보교육원. All rights reserved.</p>
+  </footer>
+</body>
+</html>
