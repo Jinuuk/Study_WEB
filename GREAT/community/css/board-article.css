@@ -42,6 +42,7 @@ button:hover {
   align-items: center;
   margin : 100px 0px 10px 0px;
   border : 1px solid var(--main-color-gre);
+  border-radius: 5px;
   width: 900px;
   padding:30px;
 }
@@ -147,6 +148,7 @@ button:hover {
 
 .comment__write .reply-box {
   border:1px solid var(--main-color-gre);
+  border-radius: 5px;
   padding: 10px;
   margin-bottom: 10px;
 }

@@ -29,6 +29,19 @@ textarea:focus {
   outline:none;
 }
 
+input:focus {
+  outline: none;
+}
+
+select:focus{
+  outline:none;
+}
+
+h3 {
+  margin:0;
+}
+
+
 
 
 /* board-main */
@@ -73,18 +86,19 @@ textarea:focus {
 
 /* board__table */
 .board__table {
-  display:flex;
+  display: flex;
   justify-content: center;
 }
 
-.board__table-content thead tr {
-  background-color: var(--mainBtn-color-gre);
-}
 
 .board__table-content thead tr th {
+
   text-align: center;
   font-size: 13px;
-  background-color: var(--mainBtn-color-gre);
+  height: 40px;
+  line-height: 40px;
+  border-top: 1px solid var(--mainBtn-color-gre);
+  border-bottom: 1px solid var(--mainBtn-color-gre);
 }
 
 
@@ -92,25 +106,40 @@ textarea:focus {
   text-align: center;
   font-size: 13px;
   border-bottom: 1px solid var(--mainBtn-color-gre);
-  padding : 5px 0;
+  padding: 5px 0;
+  height: 40px;
+  line-height: 40px;
 }
 
 .board__table-content tbody tr .left {
   text-align: left;
 }
 
-.board__table-content tbody tr td a{
-  display:block;
+.board__table-content tbody tr td a {
+  display: block;
 }
+
+.board__table-content tbody tr td a:hover{
+  text-decoration: underline;
+}
+
 
 
 /* board__wirte */
 .board__wirte{
   display:flex;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
-.board__post-btn {
+.board__wirte .log-select-all {
+  margin-left:3px;
+}
+
+.board__wirte .log-select-all label {
+  margin-left:5px;
+}
+
+.board__delete-btn {
   background-color: var(--main-color-yel );
   /* color:white; */
   /* margin:10px 0;
@@ -126,15 +155,19 @@ textarea:focus {
 }
 
 /* board__page */
-.board__page{
-  display:flex;
+.board__page {
+  display: flex;
   justify-content: center;
 }
 
-.board__page--select a{
-  border:1px solid var(--mainBtn-color-gre );
-  margin : 0 3px;
+.board__page--select a {
+  margin: 0 3px;
   font-size: 13px;
+}
+
+.board__page--select a:hover{
+  background-color: var(--mainBtn-color-gre);
+  border-radius: 5px;
 }
 
 /* board__search */

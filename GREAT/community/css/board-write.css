@@ -18,6 +18,9 @@ button:hover {
   cursor: pointer;
 }
 
+select:focus{
+  outline:none;
+}
 
 /* board-write */
 
@@ -25,7 +28,7 @@ button:hover {
   display:flex;
   flex-direction: column;
   align-items: center;
-  margin : 150px 0px 200px 0px;
+  margin : 100px 0px 200px 0px;
 }
 
 /* board-write__title */
@@ -79,13 +82,27 @@ button:hover {
   height: 30px;
 }
 
+.board-write__tool-box ul li {
+  margin:0px 5px 0px 5px;
+}
+
 .board-write__tool-box ul li button{
   border:none;
+}
+
+.board-write__tool-box ul li button:hover {
+  background-color: var(--mainBtn-color-gre);
+  border-radius: 5px;
 }
 
 .board-write__tool-box ul li select {
   background-color: var(--main-color-gre);
   border:none;
+}
+
+.board-write__tool-box ul li select:hover{
+  background-color: var(--mainBtn-color-gre);
+  border-radius: 5px;
 }
 
 
