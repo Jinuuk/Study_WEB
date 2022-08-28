@@ -51,8 +51,8 @@ const tmpData = {
 // }
 
 {
-  //객체 리터를 => 배열 Object.entries() *고차함수를 사용하기위해 객체를 배열로 변환한다.*
-  //배열 => 객체 리터럴 Object.fromEntries
+  //객체 리터럴 => 배열  : Object.entries() *고차함수를 사용하기위해 객체를 배열로 변환한다.*
+  //배열 => 객체 리터럴 :  Object.fromEntries
   const result = Object.fromEntries(Object.entries(tmpData)
                        .filter(entry => entry[1].completed));
 
