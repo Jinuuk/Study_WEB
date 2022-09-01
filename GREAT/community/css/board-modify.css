@@ -22,6 +22,14 @@ select:focus{
   outline:none;
 }
 
+.bar {
+  display: flex;
+  width: 4px;
+  height: 36px;
+  background-color: var(--main-color-yel);
+  margin-right: 10px;
+}
+
 /* board-write */
 
 .board-write {
@@ -38,7 +46,9 @@ select:focus{
 
 .board-write__title h2 {
   padding:0px;
-  margin:0px
+  margin:0px;
+  display:flex;
+  margin-bottom: 5px;
 }
 
 /* board-write__article-head */
