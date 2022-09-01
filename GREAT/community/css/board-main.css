@@ -6,7 +6,7 @@
   width: 900px;
 }
 
-button:hover {
+button {
   cursor: pointer;
 }
 
@@ -16,6 +16,14 @@ input:focus {
 
 select:focus{
   outline:none;
+}
+
+.bar {
+  display: flex;
+  width: 4px;
+  height: 36px;
+  background-color: var(--main-color-yel);
+  margin-right: 10px;
 }
 
 
@@ -36,7 +44,9 @@ select:focus{
 
 .board__title h2 {
   padding: 0px;
-  margin: 0px
+  margin: 0px;
+  display:flex;
+  margin-bottom:5px;
 }
 
 
@@ -61,11 +71,15 @@ select:focus{
 .board__table {
   display: flex;
   justify-content: center;
+  
+}
+
+.board__table-content{
+  border-spacing: 0px;
 }
 
 
 .board__table-content thead tr th {
-
   text-align: center;
   font-size: 13px;
   height: 40px;
