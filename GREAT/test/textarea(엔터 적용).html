@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="textarea.css">
+  <title>Document</title>
+</head>
+<body>
+  <h3>작성 화면</h3>
+    <textarea name="" id="textareaBox" cols="30" rows="10"></textarea>
+    <button id="writeBtn" name="">작성</button>
+
+  <h3>보기 화면</h3>
+  <p id ="textBox"></p>
+</body>
+
+<script>
+const $writeBtn = document.getElementById('writeBtn');
+const $textBox = document.getElementById('textBox');
+
+
+$writeBtn.addEventListener('click', write_fnc = () => {
+  let text = document.getElementById('textareaBox').value;
+  text = text.replace(/(?:\r\n|\r|\n)/g, '<br>');
+  // console.log(text);
+  $textBox.innerHTML = text;
+} );
+</script>
+
+</html>
