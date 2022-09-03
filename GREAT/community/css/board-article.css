@@ -28,6 +28,14 @@ button:hover {
   cursor: pointer;
 }
 
+.bar {
+  display: flex;
+  width: 4px;
+  height: 17px;
+  background-color: var(--main-color-yel);
+  margin-right: 3px;
+}
+
 /* main */
 .main {
   display : flex;
@@ -45,6 +53,7 @@ button:hover {
   border-radius: 5px;
   width: 900px;
   padding:30px;
+  box-sizing: content-box;
 }
 
 
@@ -53,6 +62,10 @@ button:hover {
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid var(--main-color-gre);
+}
+
+.article__bullet {
+  display:flex;
 }
 
 .article__title {
@@ -124,12 +137,21 @@ button:hover {
 
 .comment__list .comment-box .comment-box__contents {
   width: 100%;
+  margin-bottom: 10px;
 }
 
 .comment__list .comment-box .comment-box__contents .comment-box__top {
   display:flex;
   justify-content: space-between;
   height: 15px;
+}
+
+.comment__list .comment-box .comment-box__contents .comment-box__top i {
+  margin-left:3px;
+}
+
+.comment__list .comment-box .comment-box__contents .comment-box__middle .comment-box__text {
+  margin:5px 0;
 }
 
 
@@ -163,11 +185,13 @@ button:hover {
   box-sizing: border-box;
   border:none;
   resize: none;
+  margin:10px 0px;
 }
 
 .comment__write .reply-box .reply-box__bottom {
   display:flex;
   justify-content: flex-end;
+  height: 30px;
 }
 
 .comment__write .reply-box .reply-box__bottom .reply-box__register-btn {
