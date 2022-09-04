@@ -6,17 +6,17 @@
   width: 900px;
 }
 
-button {
+/* button {
   cursor: pointer;
-}
+} */
 
 input:focus {
   outline: none;
 }
 
-select:focus{
+/* select:focus{
   outline:none;
-}
+} */
 
 .bar {
   display: flex;

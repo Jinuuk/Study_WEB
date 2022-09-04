@@ -14,6 +14,13 @@ button:hover {
   cursor: pointer;
 }
 
+.bar {
+  /* display: flex; */
+  width: 4px;
+  height: 24px;
+  background-color: var(--main-color-yel);
+  margin-right: 5px;
+}
 
 /* main */
 .main {
@@ -51,16 +58,17 @@ padding:0px;
   margin-right:7px;
 }
 
-.member-management{
-  flex:5;
-  margin-top:50px
-}
-
 /* member-management */
 .member-management{
   display:flex;
   flex-direction: column;
   align-items: center;
+  flex:5;
+  margin-top:50px;
+}
+
+.member-management .management-title  h3  {
+  display:flex;
 }
 
 
@@ -97,12 +105,13 @@ padding:0px;
 /* memeber-log */
 
 .memeber-log {
-  margin-top:75px;
+  margin-top:25px;
 }
 
 .log-tab {
   border-bottom : 2px solid var(--main-color-gre);
   margin-bottom:25px;
+  padding-bottom: 3px;
 }
 
 .log-tab li {
@@ -136,11 +145,12 @@ padding:0px;
 .log-delete-tap{
   display:flex;
   justify-content: space-between;
+  margin-top:3px;
 }
 
 .log-delete-tap .log-select-all {
   font-size: 13px;
-  margin-left:4px;
+  margin-left:2px;
 }
 
 .log-delete-tap .log-select-all label{
@@ -168,9 +178,13 @@ padding:0px;
 }
 
 .board__page--select a {
-  border: 1px solid var(--mainBtn-color-gre);
   margin: 0 3px;
   font-size: 13px;
+}
+
+.board__page--select a:hover{
+  background-color: var(--mainBtn-color-gre);
+  border-radius: 5px;
 }
 
 /* board__search */

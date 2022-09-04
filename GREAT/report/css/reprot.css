@@ -9,7 +9,7 @@ button:hover {
 }
 
 textarea:focus {
-  outline: none
+  outline: none;
 }
 
 /* report-wrapper */
@@ -19,13 +19,14 @@ textarea:focus {
   height: 450px;
   padding: 25px;
   margin: 25px;
+  box-sizing: content-box;
   /*팝업창 만들고 삭제할 속성*/
 }
 
 /* report-header */
 .report__title {
+  text-align: center;
   margin: 0 0 35px 0;
-
 }
 
 /* report-main */
