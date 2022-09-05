@@ -40,7 +40,7 @@ padding:0px;
 
 .management-menu li {
   font-size:18px;
-  margin:15px 0px 0px 20px;
+  margin:10px 0px 0px 20px;
   padding:5px 0px 5px 10px;
   width: 125px;
 }
@@ -127,7 +127,21 @@ padding:0px;
   border:none;
   border-radius: 8px;
   font-weight: bold; */
-  width: 60px;
+  width: 50px;
+  height: 25px;
+  margin: 0px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.member__info-table tbody tr td .ban_btn {
+  background-color: var(--mainBtn-color-gre);
+  /* margin:10px 0;
+  border:none;
+  border-radius: 8px;
+  font-weight: bold; */
+  width: 50px;
   height: 25px;
   margin: 0px;
   border: none;
@@ -152,6 +166,12 @@ padding:0px;
   margin-right: 12px;
 }
 
+.log-tab li:hover {
+  background-color: var(--main-color-gre);
+  border-radius: 8px;
+  transition: all 0.5s;
+}
+
 .board-log{
   width: 100%;
 }
@@ -171,6 +191,11 @@ padding:0px;
   border-bottom: 1px solid var(--mainBtn-color-gre);
   padding: 5px 0;
 }
+
+.board-log tbody tr td a:hover {
+  text-decoration: underline;
+}
+
 
 .log-tab {
   display: flex;
