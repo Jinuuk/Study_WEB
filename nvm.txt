@@ -1,6 +1,0 @@
-npm install -global expo-cli
-npm audit fix --force
-
-get-help Set-ExecutionPolicy
-Set-ExecutionPolicy RemoteSigned
-expo init myapp1
