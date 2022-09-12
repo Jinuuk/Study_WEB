@@ -6,9 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../common/common.css">
-  <link rel="stylesheet" href="./css/board-management.css">
+  <link rel="stylesheet" href="./css/memberManagement.css">
   <script src="https://kit.fontawesome.com/038578f405.js" crossorigin="anonymous"></script>
-  <title>서비스 관리 - 작성글</title>
+  <title>서비스 관리 - 회원</title>
 </head>
 
 <body>
@@ -67,9 +67,41 @@
       </aside>
       <section class="member-management">
         <div class="management-title width--800px">
-          <h3><i class="bar"></i>작성글 관리</h3>
+          <h3><i class="bar"></i>회원 관리</h3>
         </div>
-
+        <div class="member-search width--800px">
+          <div class="member__search-keyword">
+            <input type="text" placeholder="닉네임으로 회원 검색"><a href="" class="search__search-icon"><i
+                class="fa-solid fa-magnifying-glass"></i></a>
+          </div>
+          <table class="member__info-table">
+            <thead>
+              <tr>
+                <th>회원번호</th>
+                <th>회원유형</th>
+                <th>아이디</th>
+                <th>이름</th>
+                <th>E-mail</th>
+                <th>가입일</th>
+                <th>정지기간</th>
+                <th colspan="2">회원관리</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>097</td>
+                <td>고객</td>
+                <td>gildong123</td>
+                <td>홍길동</td>
+                <td> gildong123@naver.com</td>
+                <td>2022.08.01</td>
+                <td>2022.09.15</td>
+                <td><button class="penalty_btn">제재</button></td>
+                <td><button class="ban_btn">탈퇴</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
         <div class="memeber-log width--800px">
           <ul class="log-tab">
             <li class="sell-tab"><a href="">판매글</a></li>
@@ -81,10 +113,9 @@
             <thead>
               <tr>
                 <th></th>
-                <th>번호</th>
+                <th >번호</th>
                 <!-- <th>게시판</th> -->
                 <th>제목</th>
-                <th>작성자</th>
                 <th>작성일</th>
               </tr>
             </thead>
@@ -94,7 +125,6 @@
                 <td>11</td>
                 <!-- <td>커뮤니티</td> -->
                 <td><a href="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, provident?</a></td>
-                <td>홍길동</td>
                 <td>2022.07.31</td>
               </tr>
               <tr>
@@ -102,7 +132,6 @@
                 <td>11</td>
                 <!-- <td>커뮤니티</td> -->
                 <td><a href="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, provident?</a></td>
-                <td>홍길동</td>
                 <td>2022.07.31</td>
               </tr>
               <tr>
@@ -110,7 +139,6 @@
                 <td>11</td>
                 <!-- <td>커뮤니티</td> -->
                 <td><a href="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, provident?</a></td>
-                <td>홍길동</td>
                 <td>2022.07.31</td>
               </tr>
               <tr>
@@ -118,7 +146,6 @@
                 <td>11</td>
                 <!-- <td>커뮤니티</td> -->
                 <td><a href="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, provident?</a></td>
-                <td>홍길동</td>
                 <td>2022.07.31</td>
               </tr>
               <tr>
@@ -126,7 +153,6 @@
                 <td>11</td>
                 <!-- <td>커뮤니티</td> -->
                 <td><a href="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, provident?</a></td>
-                <td>홍길동</td>
                 <td>2022.07.31</td>
               </tr>
               <tr>
@@ -134,7 +160,6 @@
                 <td>11</td>
                 <!-- <td>커뮤니티</td> -->
                 <td><a href="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, provident?</a></td>
-                <td>홍길동</td>
                 <td>2022.07.31</td>
               </tr>
               <tr>
@@ -142,7 +167,6 @@
                 <td>11</td>
                 <!-- <td>커뮤니티</td> -->
                 <td><a href="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, provident?</a></td>
-                <td>홍길동</td>
                 <td>2022.07.31</td>
               </tr>
               <tr>
@@ -150,7 +174,6 @@
                 <td>11</td>
                 <!-- <td>커뮤니티</td> -->
                 <td><a href="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, provident?</a></td>
-                <td>홍길동</td>
                 <td>2022.07.31</td>
               </tr>
               <tr>
@@ -158,7 +181,6 @@
                 <td>11</td>
                 <!-- <td>커뮤니티</td> -->
                 <td><a href="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, provident?</a></td>
-                <td>홍길동</td>
                 <td>2022.07.31</td>
               </tr>
               <tr>
@@ -166,10 +188,9 @@
                 <td>11</td>
                 <!-- <td>커뮤니티</td> -->
                 <td><a href="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, provident?</a></td>
-                <td>홍길동</td>
                 <td>2022.07.31</td>
               </tr>
-
+              
             </tbody>
           </table>
           <div class="log-delete-tap">
@@ -205,9 +226,9 @@
               </div>
               <div class="board__search-setting">
                 <select name="" id="">
-                  <option value="">제목+내용</option>
+                  <option value="">번호</option>
                   <option value="">제목</option>
-                  <option value="">작성자</option>
+                  <option value="">제목+내용</option>
                 </select>
               </div>
               <div class="board__search-keyword">
